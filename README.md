@@ -27,38 +27,43 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(AdaRMST)
 
+set.seed(2025)
+
 # Load the application dataset
-data(pancreatic_cancer_year)
+data(pancreatic_cancer_original)
 
 alpha = 0.05
-B.boot = 1000
-min_time_fix = 0.25
-max_time_fix = 4.4
+B.boot = 6000
+min_time_fix = 3
+max_time_fix = 53
 
 res.ct.pointest = AdaRMST.ct(
-  pancreatic_cancer_year,
+  pancreatic_cancer_original,
   min_time_fix,
   max_time_fix,
+  c = 8.89e-8
 )
 
 res.ct.ci = AdaRMST.ct.ci(
-    pancreatic_cancer_year,
-    alpha
+    pancreatic_cancer_original,
+    alpha,
     B.boot,
     min_time_fix,
-    max_time_fix
+    max_time_fix,
+    c = 8.89e-8
 )
 
 res.dt = AdaRMST.dt(
-    pancreatic_cancer_year,
+    pancreatic_cancer_original,
     alpha,
-    min_time_fix
+    min_time_fix,
     max_time_fix,
-    L.grid = seq(min_time_fix, max_time_fix, length.out = 10)
+    L.grid = seq(min_time_fix, max_time_fix, length.out = 10),
+    c = 2.22e-7
 ) 
 
 res.hulc = AdaRMST.hulc(
-  pancreatic_cancer_year,
+  pancreatic_cancer_original,
   alpha,
   type = "anti-conservative",
   min_time_fix,
