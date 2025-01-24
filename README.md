@@ -27,7 +27,7 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(AdaRMST)
 
-set.seed(2025)
+set.seed(0)
 
 # Load the application dataset
 data(pancreatic_cancer_original)
@@ -61,6 +61,8 @@ res.dt = AdaRMST.dt(
     L.grid = seq(min_time_fix, max_time_fix, length.out = 10),
     c = 2.22e-7
 ) 
+
+set.seed(2024)
 
 res.hulc = AdaRMST.hulc(
   pancreatic_cancer_original,
