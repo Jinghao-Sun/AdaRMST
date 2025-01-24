@@ -1,0 +1,14 @@
+Package: AdaRMST
+Title: What the Package Does (One Line, Title Case)
+Version: 0.1.0.9000
+Authors@R: 
+    person("Jinghao", "Sun", , "jinghao.sun.io@gmail.com", role = c("aut", "cre"))
+Description: The goal of AdaRMST is to implement a set of novel adaptive restricted mean survival time methods for clinical trials, especially under non-proportional hazards. See the methodology paper: Jinghao Sun, Douglas E. Schaubel, Eric J. Tchetgen Tchetgen (2025). Beyond Fixed Restriction Time: Adaptive Restricted Mean Survival Time Methods in Clinical Trials.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: survRM2, boot, nloptr
+Depends: 
+    R (>= 3.5)
+LazyData: true
